@@ -1,0 +1,480 @@
+<!-- 
+************************************************************************************
+  File: about.html 
+  Developer: Travis Bontrager
+  Developed: Jan/Feb 2017
+  Web address: qualityfloor.biz/about.html
+  Description: Quality Floor About Us page
+************************************************************************************
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+    <link rel="icon" type="image/ico" href="images/QF_icon.ico">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+
+    <style>
+        html {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        .wrapper {
+          width: 100%;
+          margin: 0;
+          padding: 1em 0 0 0;
+          background-image: url("images/blueback4.jpg");
+        }
+        .container {
+          margin: 0 auto;
+          width: 70%;
+        }
+        .leftHeader {
+          width: 50%; 
+          float: left;
+        }
+        .logoWrapper {
+          width: 400px;
+        }
+        .logoWrapper img {
+          max-width: 100%;
+          margin-top: 0.5em;
+        }
+        .rightHeader {
+          width: 50%;
+          float: right;
+          text-align: right;
+        }
+        .headerMenuWrapper {
+          width: 360px;
+          float: right;
+          text-align: center;
+        }
+        .rightHeader h1 {
+          margin-top: 0.1em;
+          margin-bottom: 0.1em;
+        }
+        .headerMenu {
+          float: right;
+          padding: 0;
+          text-align: center;
+          background-color: white;
+          width: 100%;
+        }
+        .headerMenu ul {
+          margin: 0.5em 0 0.5em -2em;
+        }
+        .headerMenu ul li {
+          display: inline-block;
+          margin: 0 0.2em 0 0;
+        }
+        .headerMenu ul li a {
+          font-weight: bold;
+          color: #3333ff;
+        }
+        .clearFloat {
+          clear: both;
+        }
+        .tagLine1 {
+          text-align: center;
+          color: #3333ff;
+        }
+        .tagLine1 h2 {
+         margin: .5em 0 0 0; 
+        }
+        .tagLine2 {
+          text-align: center;
+          color: #3333ff;
+        }
+        .tagLine2 h2 {
+         margin: .5em 0 0 0; 
+        }
+        .buttons {
+          width: 100%;
+        }
+        .leftButton {
+          width: 49%;
+          float: left;
+          text-align: center;
+        }
+        .leftB {
+          float: right;
+          color: white;
+          padding: .4em 1em;
+          background-color: red;
+          border-radius: 20px;
+        }
+        .leftB h1 {
+          margin: 0;
+        }
+        .rightButton {
+          width: 49%;
+          float: right;
+          text-align: center;
+        }
+        .rightB {
+          float: left;
+          color: white;
+          padding: .4em 1em;
+          background-color: red;
+          border-radius: 20px;
+        }
+        .rightB h1 {
+          margin: 0;
+        }
+        .content {
+          width: 98%;
+          text-align: center;
+          background-color:  #99ddff;
+          border: .25em solid #3333ff;
+          border-radius: 1em;
+          padding-bottom: 1em;
+          margin-top: 1.25em;
+        }
+        .content h1 {
+          color: white;
+        }
+        .content p {
+          margin-left: 2em;
+          margin-right: 2em;
+        }
+        .info {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        .story {
+          text-align: justify;
+        }
+        .footerWrapper {
+          margin: 0;
+          padding: 0;
+          height: auto;
+        }
+        .footerTop {
+          margin: 0;
+          padding: 0 0 1em 1em;
+          background-color: #20DCFF;
+        }
+        .footerInfo {
+          width: 45%;
+          float: left;
+        }
+        .footerInfo p {
+          margin: 0;
+          padding: 0;
+        }
+        .footerInfo h2 {
+          margin-bottom: .5em;
+          color: white;
+        }
+        .footerInfo h3 {
+          margin-bottom: .5em;
+          color: white;
+        }
+        .footerMenu {
+          float: right;
+        }
+        .footerMenu ul {
+          margin: 0.5em 1em 0.5em -2em;
+        }
+        .footerMenu ul li {
+          display: inline-block;
+          margin: 0 0.2em;
+        }
+        .footerMenu ul li a {
+          text-decoration: none;
+          font-weight: bold;
+          color: #3333ff;
+        }
+        .footerBottom { 
+          margin: 0 0 0 0;
+          padding: 0.1em 0;
+          color: white;
+          background-color: #00004d;
+          text-align: center;
+        }
+        .footerBottom .container ul {
+          margin: 0.5em 0 0.5em -2em;
+        }
+        .footerBottom .container ul li {
+          display: inline-block;
+          margin: 0 0.4em;
+        }
+        .footerBottom .container ul li h3 {
+            margin: 0;
+        }
+        @media screen and (max-width: 1365px) {
+          .container {
+            width: 85%;
+          }
+        }
+        @media screen and (max-width: 1150px) {
+          .container {
+           width: 98%;
+          }
+        }
+       @media screen and (max-width: 890px) {
+         .tagLine1 {
+           display: none;
+         }
+         #landscape {
+           display: none;
+         }
+       }
+       @media screen and (min-width: 891px) {
+         .tagLine2 {
+           display: none;
+         } 
+         #portrait {
+           display: none;
+         }
+       }
+       @media screen and (max-width: 768px) {
+          .logoWrapper {
+            margin: auto;
+          }
+          .headerMenuWrapper {
+            margin: auto;
+            float: none;
+          }
+          .leftHeader {
+            width: 100%; 
+            float: none;
+          }  
+          .rightHeader {
+            width: 100%; 
+            float: none;
+            text-align: center;
+          }  
+          .rightHeader h1 {
+            font-size: 150%;
+          }
+          .headerMenu {
+            float: none;
+            margin: 0 auto;
+          } 
+          .tagLine2 {
+            display: none;
+          }
+          .footerInfo {
+            width: 100%;
+            float: none;
+          }
+         
+          .footerBottom .container ul li {
+            display: block;
+            margin: 0 0.4em;
+          }
+          .spacer {
+              display: none;
+          }
+        }
+        @media screen and (max-width: 400px) {
+          .logoWrapper {
+            width: 300px;
+          } 
+          .headerMenuWrapper {
+            width: 315px;
+          }
+           .footerMenu {
+             float: none;
+          }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container"> 
+
+<!-- 
+************************************************************************************
+Header
+************************************************************************************
+-->
+
+            <div class="headerWrapper">
+                <div class="leftHeader">
+                    <div class="logoWrapper">
+
+                        <img src="images/QF_logo.jpg" alt="Quality Floor">
+
+                    </div> <!-- /end .logoWrapper -->
+                </div> <!-- /end .leftHeader -->
+
+                <div class="rightHeader">
+                <div class="headerMenuWrapper">
+
+                    <h1>Call Us: (260)593-2213</h1>
+                    <div class="headerMenu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li> 
+                        <li>||</li> 
+                        <li><a href="about.html">About Us</a></li>
+                        <li>||</li>
+                        <li><a href="map.html">Map</a></li> 
+                        <li>||</li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                    </div> <!-- /end .headerMenu -->
+
+                </div> <!-- /end .headerMenuWrapper -->
+                </div> <!-- /end .rightHeader -->
+                
+                <div class="clearFloat"></div>
+            </div> <!-- /end .headerWrapper -->
+
+<!-- 
+************************************************************************************
+tagline
+************************************************************************************
+-->
+
+            <div class="tagLine1">
+
+                <h2>Quality Products and Professional Installations at Discount Prices since 1987</h2>
+
+            </div> <!-- /end .tagLine1 -->
+
+            <div class="tagLine2">
+
+                <h3>Quality Products and Professional Installations at Discount Prices since 1987</h3>
+
+            </div> <!-- /end .tagLine2 --> <br>
+
+<!-- 
+************************************************************************************
+main buttons
+************************************************************************************
+-->
+
+            <div class="buttons">
+                <div class="leftButton">
+                    <a href="prices.php"><div class="leftB">
+         
+                        <h1>Product Pricing</h1>
+
+                    </div></a> <!-- /end .leftB -->
+                </div> <!-- leftButton -->
+
+                <div class="rightButton">
+                    <a href="estimate.html"><div class="rightB">
+
+                        <h1>Online Estimate</h1>
+
+                    </div></a> <!-- /end .rightB -->
+                </div> <!-- /end .rightButton -->
+
+                <div class="clearFloat"></div>
+            </div> <!-- /end .buttons --> 
+
+<!-- 
+************************************************************************************
+content
+************************************************************************************
+-->
+
+            <div class="content">
+
+                <br>
+                <img id="landscape" src="images/sign.jpg" alt="Quality Floor" width="60%">
+                <img id="portrait" src="images/sign1.jpg" alt="Quality Floor" width="60%">
+                <p>We are located just 3 1/2 miles north of Topeka on 600 West at</p>
+                <p class="info">3665 S 600 W</p>
+                <p class="info">Topeka, In 46571</p>
+                <p class="info">Phone: (260) 593-2213</p>
+                <p class="info">Email: qualityf@ligtel.com</p>
+                <br>
+                <p class="info">Monday-Friday: 8:00 am ~ 5:00 pm</p>
+                <p class="info">Saturday: 9:00 am ~ 2:00 pm</p>
+                <p class="info">Sunday: Closed</p>
+                <p class="story">Quality Floor was established in 1987 when Doug Mishler and his wife Phyllis bought her father's salvage business and transformed it into an industry authorized floorcoverings dealer. They assembled a showroom with an extensive selection of products from industry-leading manufacturers. They built a large storeroom so they are able to keep a fine selection of products in stock. And, they hired highly skilled professional floorcovering installers to provide the highest quality installations. Since that time Quality Floor has been offering quality products and professional installations at discount prices. All our products and labor are warrantied, and customer satisfaction is our main goal. We want you to enjoy the comfort and beauty of your new floor for years to come because there is nothing we enjoy more than the satisfaction of a job well done and a happy customer. That's why a large section of our customer base are return customers we have been working with for years. In addition to product and installation warranties, and an extensive selection of products, we also offer free measures and estimates and a down home atmosphere. So come in and visit us today! Take a look around our showroom, find something you love, talk to Phyllis or our store manager Lisa, and schedule an appointment to have Doug come out to measure your floor. You won't regret your trip to Quality Floor!</p>              
+                
+            </div> <!-- /end .content --> <br><br><br>
+        </div> <!-- /end .container -->
+         
+        <div class="spacer">
+            <br>
+        </div> <!-- /end .spacer -->
+
+<!-- 
+************************************************************************************
+footer
+************************************************************************************
+-->
+
+        <div class="footerWrapper">
+            <div class="footerTop">
+                <div class="container">
+                    <div class="footerInfo">
+
+                        <h2>Quality Floor</h2>
+                        <p>3665 S 600 W</p>
+                        <p>Topeka, In 46571</p>
+                        <p>Phone: (260) 593-2213</p>
+                        <p>Email: qualityf@ligtel.com</p>
+                        <h3>Store hours:</h3>
+                        <table>
+                            <tr>
+                                <td>Monday-Friday:</td> <td>8:00 am ~ 5:00 pm<td>
+                            </tr><tr> 
+                                <td>Saturday:</td> <td>9:00 am ~ 2:00 pm<td>
+                            </tr><tr>
+                                <td>Sunday:</td> <td>Closed<td>
+                            </tr>
+                        </table>
+
+                    </div> <!-- /end .footerInfo -->
+
+                    <div class="footerMenu">
+             
+                        <br><br>
+                        <div class="spacer">
+                            <br><br><br><br> <br><br><br><br> <br><br>
+                        </div> <!-- /end .spacer -->
+                        
+                        <ul>
+                          <li><p><a href="index.html">Home</a></p></li> 
+                          <li>||</li> 
+                          <li><a href="about.html">About Us</a></li>
+                          <li>||</li>
+                          <li><a href="map.html">Map</a></li> 
+                          <li>||</li>
+                          <li><a href="faq.html">FAQ</a></li>
+                        </ul>                   
+
+                    </div> <!-- /end .footerMenu -->
+
+                    <div class="clearFloat"></div>
+                </div> <!-- /end .container -->
+            </div> <!-- /end .footerTop -->
+
+            <div class="footerBottom">
+                <div class="container">
+
+                    <ul>
+                        <li>Products by:&nbsp;</li>
+                        <li><h3>Armstrong</h3></li>
+                        <span class="spacer"><li><h3>&#176;</h3></li></span>
+                        <li><h3>Congoleum</h3></li>
+                        <span class="spacer"><li><h3>&#176;</h3></li></span>
+                        <li><h3>Mannington</h3></li>
+                        <span class="spacer"><li><h3>&#176;</h3></li></span>
+                        <li><h3>Mohawk</h3></li>                        
+                        <span class="spacer"><li><h3>&#176;</h3></li></span>
+                        <li><h3>Shaw</h3></li>                        
+                        <li>&nbsp;...and many more</li>
+                    </ul>
+
+                </div> <!-- /end .container -->
+            </div> <!-- /end .footerBottom --> 
+        </div> <!-- /end .footerWrapper -->
+    </div> <!-- /end .wrapper -->
+</body>
+</html>

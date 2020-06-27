@@ -1,0 +1,895 @@
+<!-- 
+************************************************************************************
+  File: estimate.html 
+  Developer: Travis Bontrager
+  Developed: Jan/Feb 2017
+  Web address: qualityfloor.biz/estimate.html
+  Description: Quality Floor Online Estimate page
+************************************************************************************
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Estimate</title>
+    <link rel="icon" type="image/ico" href="images/QF_icon.ico">
+    <meta name="viewport" content="width=device-width, intial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <style>
+        html {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+        .wrapper {
+          width: 100%;
+          margin: 0;
+          padding: 1em 0 0 0;
+          background-image: url("images/blueback4.jpg");
+        }
+        .container {
+          margin: 0 auto;
+          width: 70%;
+        }
+        .leftHeader {
+          width: 50%; 
+          float: left;
+        }
+        .logoWrapper {
+          width: 360px;
+        }
+        .logoWrapper img {
+          max-width: 100%;
+          margin-top: 0.5em;
+        }
+        .rightHeader {
+          width: 50%;
+          float: right;
+          text-align: right;
+        }
+        .headerMenuWrapper {
+          width: 360px;
+          float: right;
+          text-align: center;
+        }
+        .rightHeader h1 {
+          margin-top: 0.1em;
+          margin-bottom: 0.1em;
+        }
+        .headerMenu {
+          float: right;
+          padding: 0;
+          text-align: center;
+          background-color: white;
+          width: 100%;
+        }
+        .headerMenu ul {
+          margin: 0.5em 0 0.5em -2em;
+        }
+        .headerMenu ul li {
+          display: inline-block;
+          margin: 0 0.2em 0 0;
+        }
+        .headerMenu ul li a {
+          font-weight: bold;
+          color: #3333ff;
+        }
+        .clearFloat {
+          clear: both;
+        }
+        .tagLine1 {
+          text-align: center;
+          color: #3333ff;
+        }
+        .tagLine1 h2 {
+         margin: .5em 0 0 0; 
+        }
+        .tagLine2 {
+          text-align: center;
+          color: #3333ff;
+        }
+        .tagLine2 h2 {
+         margin: .5em 0 0 0; 
+        }
+        .buttons {
+          width: 100%;
+        }
+        .leftButton {
+          width: 49%;
+          float: left;
+          text-align: center;
+        }
+        .leftB {
+          float: right;
+          color: white;
+          padding: .4em 1em;
+          background-color: red;
+          border-radius: 20px;
+        }
+        .leftB h1 {
+          margin: 0;
+        }
+        .rightButton {
+          width: 49%;
+          float: right;
+          text-align: center;
+        }
+        .rightB {
+          float: left;
+          color: white;
+          padding: .4em 1em;
+          background-color: red;
+          border-radius: 20px;
+        }
+        .rightB h1 {
+          margin: 0;
+        }
+        .content {
+          width: 98%;
+          text-align: center;
+          background-color:  #99ddff;
+          border: .25em solid #3333ff;
+          border-radius: 1em;
+          padding-bottom: 1em;
+          margin-top: 1.25em;
+        }
+        .content h1 {
+          color: white;
+        }
+        .content h2 {
+          color: red;
+        }
+        .content h3 {
+          color: #3333ff;
+          text-decoration: underline;
+        }
+        .content p {
+          margin-left: 2em;
+          margin-right: 2em;
+          text-align: justify;
+        }
+        .estTable {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .estTableMobile {
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #tosButton {
+          visibility: hidden;
+        }
+        .footerWrapper {
+          margin: 0;
+          padding: 0;
+          height: auto;
+        }
+        .footerTop {
+          margin: 0;
+          padding: 0 0 1em 1em;
+          background-color: #20DCFF;
+        }
+        .footerInfo {
+          width: 45%;
+          float: left;
+        }
+        .footerInfo p {
+          margin: 0;
+          padding: 0;
+        }
+        .footerInfo h2 {
+          margin-bottom: .5em;
+          color: white;
+        }
+        .footerInfo h3 {
+          margin-bottom: .5em;
+          color: white;
+        }
+        .footerMenu {
+          float: right;
+        }
+        .footerMenu ul {
+          margin: 0.5em 1em 0.5em -2em;
+        }
+        .footerMenu ul li {
+          display: inline-block;
+          margin: 0 0.2em;
+        }
+        .footerMenu ul li a {
+          text-decoration: none;
+          font-weight: bold;
+          color: #3333ff;
+        }
+        .footerBottom { 
+          margin: 0 0 0 0;
+          padding: 0.1em 0;
+          color: white;
+          background-color: #00004d;
+          text-align: center;
+        }
+        .footerBottom .container ul {
+          margin: 0.5em 0 0.5em -2em;
+        }
+        .footerBottom .container ul li {
+          display: inline-block;
+          margin: 0 0.4em;
+        }
+        .footerBottom .container ul li h3 {
+            margin: 0;
+        }
+        @media screen and (max-width: 1365px) {
+          .container {
+            width: 85%;
+          }
+        }
+        @media screen and (max-width: 1150px) {
+          .container {
+           width: 98%;
+          }
+        }
+       @media screen and (max-width: 890px) {
+         .tagLine1 {
+           display: none;
+         }
+       }
+       @media screen and (min-width: 891px) {
+         .tagLine2 {
+           display: none;
+         } 
+       }
+       @media screen and (max-width: 768px) {
+          .logoWrapper {
+            margin: auto;
+          }
+          .headerMenuWrapper {
+            margin: auto;
+            float: none;
+          }
+          .leftHeader {
+            width: 100%; 
+            float: none;
+          }  
+          .rightHeader {
+            width: 100%; 
+            float: none;
+            text-align: center;
+          }  
+          .rightHeader h1 {
+            font-size: 150%;
+          }
+          .headerMenu {
+            float: none;
+            margin: 0 auto;
+          } 
+          .tagLine2 {
+            display: none;
+          }
+          .estTable {
+            display: none;
+          }
+          .footerInfo {
+            width: 100%;
+            float: none;
+          }
+          .footerBottom .container ul li {
+            display: block;
+            margin: 0 0.4em;
+          }
+          .spacer {
+              display: none;
+          }
+        }
+        @media screen and (min-width: 769px) {
+          .estTableMobile {
+            display: none;
+          }
+        }
+        @media screen and (max-width: 400px) {
+          .logoWrapper {
+            width: 300px;
+          }
+          .headerMenuWrapper {
+            width: 315px;
+          }
+           .footerMenu {
+             float: none;
+          }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container"> 
+
+<!-- 
+************************************************************************************
+Header
+************************************************************************************
+-->
+
+            <div class="headerWrapper">
+                <div class="leftHeader">
+                    <div class="logoWrapper">
+
+                        <img src="images/QF_logo.jpg" alt="Quality Floor">
+
+                    </div> <!-- /end .logoWrapper -->
+                </div> <!-- /end .leftHeader -->
+
+                <div class="rightHeader">
+                <div class="headerMenuWrapper">
+
+                    <h1>Call Us: (260)593-2213</h1>
+                    <div class="headerMenu">
+                    <ul>
+                        <li><a href="index.html">Home</a></li> 
+                        <li>||</li> 
+                        <li><a href="about.html">About Us</a></li>
+                        <li>||</li>
+                        <li><a href="map.html">Map</a></li> 
+                        <li>||</li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                    </div> <!-- /end .headerMenu -->
+ 
+                </div> <!-- /end .headerMenuWrapper -->
+                </div> <!-- /end .rightHeader -->
+                
+                <div class="clearFloat"></div>
+            </div> <!-- /end .headerWrapper -->
+
+<!-- 
+************************************************************************************
+tagline
+************************************************************************************
+-->
+
+            <div class="tagLine1">
+
+                <h2>Quality Products and Professional Installations at Discount Prices since 1987</h2>
+
+            </div> <!-- /end .tagLine1 -->
+
+            <div class="tagLine2">
+
+                <h3>Quality Products and Professional Installations at Discount Prices since 1987</h3>
+
+            </div> <!-- /end .tagLine2 --> <br>
+
+<!-- 
+************************************************************************************
+main buttons
+************************************************************************************
+-->
+
+            <div class="buttons">
+                <div class="leftButton">
+                    <a href="prices.php"><div class="leftB">
+         
+                        <h1>Product Pricing</h1>
+
+                    </div></a> <!-- /end .leftB -->
+                </div> <!-- leftButton -->
+
+                <div class="rightButton">
+                    <a href="estimate.html"><div class="rightB">
+
+                        <h1>Online Estimate</h1>
+
+                    </div></a> <!-- /end .rightB -->
+                </div> <!-- /end .rightButton -->
+
+                <div class="clearFloat"></div>
+            </div> <!-- /end .buttons --> 
+
+<!-- 
+************************************************************************************
+content
+************************************************************************************
+-->
+
+            <div class="content">
+
+                <h1>Rough Estimate Tool</h1>
+                <p>This Rough Estimate Tool generates a rough cost estimate for a single square or rectangular room using your measurements. Per square yard prices for flooring can be found on our <a href="prices.php">product pricing</a> page. To take measurements for the estimate, measure the room from wall to wall at the widest point in each direction. Round any partial inches up to the nearest inch. If there is a doorway on the wall you are measuring to, measure into the doorway to the center of the spot the door sits when it is closed. Enter your measurements (in feet and inches), the type of flooring, and the per square yard price in the form input boxes below and click the Get Estimate button. The tool will use your measurements to calculate how much product you need and then use that figure along with the per square yard product price you enter and our installation rate to figure an overall rough cost estimate.</p>
+            
+    <form id="measureForm" action="">
+
+<!-- 
+************************************************************************************
+Desktop input form
+************************************************************************************
+-->
+
+      <table class="estTable">
+          <tr>
+              <th colspan="2">
+                  <label>Measurement 1</label>
+              </th>
+              <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+              <th colspan="2">
+                  <label>Measurement 2</label>
+              </th>
+          </tr>
+          <tr>
+              <td>
+                  Feet: 
+              </td>
+              <td>
+                  <input type="number" name="nsFeet" autocomplete="off">
+              </td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td>
+                  Feet:
+              </td>
+              <td>
+                  <input type="number" name="weFeet" autocomplete="off">
+              </td>
+          </tr>
+          <tr>
+              <td>    
+                  Inches: 
+              </td>
+              <td>
+                  <input type="number" name="nsInch" autocomplete="off">
+              </td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td>
+                  Inches: 
+              </td>
+              <td>
+                  <input type="number" name="weInch" autocomplete="off">
+              </td>
+          </tr>
+          <tr>
+              <td><br></td>
+          </tr>
+          <tr> 
+              <th></th>
+              <th>
+                  <label>Floor type</label>
+              </th>
+              <th>&nbsp;&nbsp;&nbsp;&nbsp;</th>
+              <th></th>
+              <th>
+                  <label>Price</label>
+              </th>
+          </tr>
+          <tr>
+              <td></td>
+              <td>    
+                  <select>
+                      <option value="carpet">Carpet</option>
+                      <option value="vinyl">Resilient/Vinyl</option>
+                  </select>
+              </td>
+              <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td></td>
+              <td>    
+                  <input type="number" step="0.01" name="price" autocomplete="off">
+              </td>
+          </tr>
+      </table>
+ 
+<!-- 
+************************************************************************************
+Mobile input form
+************************************************************************************
+-->
+ 
+      <table class="estTableMobile">
+          <tr>
+              <th colspan="2">
+                  <label>Measurement 1</label>
+              </th>
+          </tr>
+          <tr>
+              <td>Feet:</td>
+              <td><input type="number" name="nsFeet" autocomplete="off"></td>              
+          </tr>
+          <tr>
+              <td>Inches:</td>
+              <td><input type="number" name="nsInch" autocomplete="off"></td>
+          </tr>
+          <tr>
+              <th colspan="2"><label>Measurement 2</label></th>
+          </tr>
+          <tr>              
+              <td>Feet:</td>
+              <td><input type="number" name="weFeet" autocomplete="off"></td>
+          </tr>
+          <tr>
+              <td>Inches:</td>
+              <td><input type="number" name="weInch" autocomplete="off"></td>
+          </tr>
+          <tr> 
+              <th colspan="2"><label>Floor type</label></th>
+          </tr>
+          <tr>
+              <td colspan="2"><select>
+                                  <option value="carpet">Carpet</option>
+                                  <option value="vinyl">Resilient/Vinyl</option></select>
+              </td>
+          </tr>
+          <tr>
+              <th colspan="2"><label>Price</label></th>
+          </tr>
+          <tr>
+              <td colspan="2"><input type="number" step="0.01" name="price" autocomplete="off"></td>
+          </tr>
+      </table>
+    </form><br>
+    <button onclick="tos()">Get Estimate</button><br><br>
+
+<!-- 
+************************************************************************************
+Estimate output
+************************************************************************************
+-->
+
+    <div id="tc"> 
+        <h2 id="tc1"></h2> 
+        <p id="tc2"></p>
+        <p id="tc3"></p>
+        <button id="tosButton" onclick="estimator()">I agree</button>
+        <br>
+        <h3 id="estimate"></h3>
+        <h4 id="estimate1"><h4>
+        <h2 id="estimate2"></h2>
+        <h4 id="estimate3"></h4>
+        <h2 id="estimate4"></h2>
+        <h4 id="estimate5"></h4>
+        <h2 id="estimate6"></h2>
+        <p id="extra"></p>
+        <br>
+    </div>
+         
+            </div> <!-- /end .content --> <br><br><br>
+        </div> <!-- /end .container -->
+         
+        <div class="spacer">
+            <br>
+        </div> <!-- /end .spacer -->
+
+<!-- 
+************************************************************************************
+footer
+************************************************************************************
+-->
+
+        <div class="footerWrapper">
+            <div class="footerTop">
+                <div class="container">
+                    <div class="footerInfo">
+
+                        <h2>Quality Floor</h2>
+                        <p>3665 S 600 W</p>
+                        <p>Topeka, In 46571</p>
+                        <p>Phone: (260) 593-2213</p>
+                        <p>Email: qualityf@ligtel.com</p>
+                        <h3>Store hours:</h3>
+                        <table>
+                            <tr>
+                                <td>Monday-Friday:</td> <td>8:00 am ~ 5:00 pm<td>
+                            </tr><tr> 
+                                <td>Saturday:</td> <td>9:00 am ~ 2:00 pm<td>
+                            </tr><tr>
+                                <td>Sunday:</td> <td>Closed<td>
+                            </tr>
+                        </table>
+
+                    </div> <!-- /end .footerInfo -->
+
+                    <div class="footerMenu">
+             
+                        <br><br>
+                        <div class="spacer">
+                            <br><br><br><br> <br><br><br><br> <br><br>
+                        </div> <!-- /end .spacer -->
+                        
+                        <ul>
+                          <li><p><a href="index.html">Home</a></p></li> 
+                          <li>||</li> 
+                          <li><a href="about.html">About Us</a></li>
+                          <li>||</li>
+                          <li><a href="map.html">Map</a></li> 
+                          <li>||</li>
+                          <li><a href="faq.html">FAQ</a></li>
+                        </ul>                   
+
+                    </div> <!-- /end .footerMenu -->
+
+                    <div class="clearFloat"></div>
+                </div> <!-- /end .container -->
+            </div> <!-- /end .footerTop -->
+
+            <div class="footerBottom">
+                <div class="container">
+
+                    <ul>
+                        <li>Products by:&nbsp;</li>
+                        <li><h3>Armstrong</h3></li>
+                        <span class="spacer"><li><h3>&#176;</h3></li></span>
+                        <li><h3>Congoleum</h3></li>
+                        <span class="spacer"><li><h3>&#176;</h3></li></span>
+                        <li><h3>Mannington</h3></li>
+                        <span class="spacer"><li><h3>&#176;</h3></li></span>
+                        <li><h3>Mohawk</h3></li>                        
+                        <span class="spacer"><li><h3>&#176;</h3></li></span>
+                        <li><h3>Shaw</h3></li>                        
+                        <li>&nbsp;...and many more</li>
+                    </ul>
+
+                </div> <!-- /end .container -->
+            </div> <!-- /end .footerBottom --> 
+        </div> <!-- /end .footerWrapper -->
+    </div> <!-- /end .wrapper -->
+
+<!-- 
+************************************************************************************
+scripts
+************************************************************************************
+-->
+    
+    <script type="text/javascript">
+
+      // -------------------------------------------------------------------------------------------------------
+      // Description: tos() - creates a terms of service notification with an "I agree" button which must be 
+      //                      pressed to recieve the estimate. The tos notification is the result of accessing
+      //                      CSS style selectors, but seemingly appears dynamically out of thin air.                 
+      // Parameters: none
+      // Returns: none
+      // Calls: none
+      //  -------------------------------------------------------------------------------------------------------
+      function tos() {
+        document.getElementById("estimate").innerHTML = "";
+        document.getElementById("estimate1").innerHTML = "";
+        document.getElementById("estimate2").innerHTML = "";
+        document.getElementById("estimate3").innerHTML = "";
+        document.getElementById("estimate4").innerHTML = "";
+        document.getElementById("estimate5").innerHTML = "";
+        document.getElementById("estimate6").innerHTML = "";
+        document.getElementById("extra").innerHTML = "";
+        document.getElementById("tc").style.backgroundColor = "white";        
+        document.getElementById("tc").style.border = ".25em";
+        document.getElementById("tc").style.borderColor = "red";
+        document.getElementById("tc").style.borderStyle = "solid";
+        document.getElementById("tc").style.borderRadius = "1em";
+        document.getElementById("tc").style.width = "90%";
+        document.getElementById("tc").style.marginLeft = "5%";
+        document.getElementById("tc1").innerHTML = "Terms and Conditions";
+        document.getElementById("tc2").innerHTML = "To receive your obligation-free rough estimate, please read the following Terms and Conditions and click the button below.";
+        document.getElementById("tc3").innerHTML = "This Rough Estimate Tool can be used only to generate a non-binding rough cost estimate. The purpose of this Rough Estimate Tool is to provide the user with an approximation of the cost of the flooring installation of their choice. That approximation includes the cost of the product and standard installation labor. Additional costs may be applicable. Costs generated by this Rough Estimate Tool are in no way guaranteed by Quality Floor or its owners, staff, or installers. This software is still in beta, and as such does not account for the excess product needed for pattern match installations and only accurately calculates estimates for rooms that are square or rectangular in shape. Estimates provided by Quality Floor employees may vary in price due to these limitations. By clicking the \"I agree\" button, you agree that you have read, understand, and agree to the terms and conditions herein.";
+          document.getElementById("tosButton").style.visibility = "visible";      
+      }
+
+      // -------------------------------------------------------------------------------------------------------
+      // Description: estimator() - parses the values from the input form, error checks input for missing entries
+      //                            and numerical range errors, gives error message if necessary, calculates and
+      //                            displays estimate if there are no errors, and resets form.      
+      // Parameters: none
+      // Returns: none
+      // Calls: calcSqrYrds()
+      //  -------------------------------------------------------------------------------------------------------
+      function estimator() {
+        var mediaQuery = window.matchMedia( "(min-width: 769px)" ); // check for screen size to determine which form entries to use
+        var feet1, // quanity of feet of first measurement 
+            inch1, // quanity of inches of first measurement  
+            feet2, // quanity of feet of second measurement 
+            inch2, // quanity of inches of second measurement 
+            price, // price of chosen product
+            type, // type of chosen product 
+            sqrYds, // square yardage of product required for install
+            cost, // total cost of install
+            inputError=0; // boolean indicator of erroneous input 
+      
+        // Empty previously use elements  
+        document.getElementById("tc1").innerHTML = "";
+        document.getElementById("tc2").innerHTML = "";
+        document.getElementById("tc3").innerHTML = "";
+        document.getElementById("tosButton").style.visibility = "hidden";
+
+        // parse inputs from form entries
+        if (mediaQuery.matches) {
+          feet1 = parseInt(document.getElementById("measureForm").elements[0].value);
+          feet2 = parseInt(document.getElementById("measureForm").elements[1].value);
+          inch1 = parseInt(document.getElementById("measureForm").elements[2].value);
+          inch2 = parseInt(document.getElementById("measureForm").elements[3].value);
+          type = document.getElementById("measureForm").elements[4].value;
+          price = parseFloat(document.getElementById("measureForm").elements[5].value)
+        } else {
+          feet1 = parseInt(document.getElementById("measureForm").elements[6].value);
+          feet2 = parseInt(document.getElementById("measureForm").elements[7].value);
+          inch1 = parseInt(document.getElementById("measureForm").elements[8].value);
+          inch2 = parseInt(document.getElementById("measureForm").elements[9].value);
+          type = document.getElementById("measureForm").elements[10].value;
+          price = parseFloat(document.getElementById("measureForm").elements[11].value);
+        }
+   
+        // error check
+        if ( isNaN(feet1) || isNaN(feet2) || isNaN(inch1) || isNaN(inch2) || isNaN(price) )
+          inputError = 1;
+        if (feet1 <= 0 || feet2 <= 0 || inch1 < 0 || inch1 > 11 || inch2 < 0 || inch2 > 11 || price <= 0)
+          inputError = 1;
+
+        // error message
+        if (inputError) {
+          document.getElementById("tc1").innerHTML = "Error";
+          document.getElementById("tc2").innerHTML = "There was an error with the input. All six input fields must be filled to recieve an estimate. All measurements and the price must be positive numbers and the values of inches must be in the range 0-11. Prices can be found on our product pricing page";
+          document.getElementById("estimate").innerHTML = "Please try again.";
+          document.getElementById("measureForm").reset();
+        } else {
+
+          // calculate square yardage
+          sqrYrds = calcSqrYrds(feet1, inch1, feet2, inch2); 
+          document.getElementById("estimate").innerHTML = "Rough estimate including product and standard installation labor";
+          
+          // calculate cost
+          switch (type) {
+         
+            case "carpet":
+              document.getElementById("estimate1").innerHTML = "Carpet with premium pad:";
+              cost = sqrYrds * (price + 5.99 + 5);
+              cost = Math.floor(cost * 100) /100;
+              document.getElementById("estimate2").innerHTML = "$" + cost.toFixed(2);
+              document.getElementById("estimate3").innerHTML = "Carpet with standard pad:";
+              cost = sqrYrds * (price + 3.99 + 5);
+              cost = Math.floor(cost * 100) /100;
+              document.getElementById("estimate4").innerHTML = "$" + cost.toFixed(2);
+              document.getElementById("estimate5").innerHTML = "Carpet with no pad (glued down):";
+              cost = sqrYrds * (price + 5);
+              cost = Math.floor(cost * 100) /100;
+              document.getElementById("estimate6").innerHTML = "$" + cost.toFixed(2);
+              break;
+
+            case "vinyl":
+              document.getElementById("estimate1").innerHTML = "Resilient/Vinyl with luan underlayment (wood subfloor):";
+              cost = sqrYrds * (price + 4.5 + 6);
+              cost = Math.floor(cost * 100) /100;
+              document.getElementById("estimate2").innerHTML = "$" + cost.toFixed(2);
+              document.getElementById("estimate3").innerHTML = "Resilient/Vinyl without luan underlaymeny (concrete subfloor):";
+              cost = sqrYrds * (price + 6);
+              cost = Math.floor(cost * 100) /100;
+              document.getElementById("estimate4").innerHTML = "$" + cost.toFixed(2);
+              document.getElementById("estimate5").innerHTML = "(No labor for floor prep included)";
+              break;
+
+          }
+          document.getElementById("measureForm").reset();
+          document.getElementById("extra").innerHTML = "**Standard installation includes only installation of the product. Additional services, such as floor prep, carpet removal, toilet removal/replacement, etc. are available at an addtional cost.";
+        }
+      }
+
+      // -------------------------------------------------------------------------------------------------------
+      // Description: advancedCalc() - calculates square yardage for rooms large enough to require seaming the
+      //                               product.    
+      // Parameters: feet1 - quanity of feet of first measurement
+      //             inch1 - quanity of inches of first measurement
+      //             feet2 - quanity of feet of first measurement
+      //             inch2 - quanity of inches of first measurement
+      // Returns: sqrYrds - the square yardage of product required to do the install
+      // Calls: convertMeasure()
+      //  -------------------------------------------------------------------------------------------------------
+      function advancedCalc(feet1, inch1, feet2, inch2) {
+        var measure1, // first measurement as float 
+            measure2, // second measurement as float
+            fullShots, // quantity of full-length cuts needed for installation 
+            fillWidth, // width of the unfilled section after all full shots have been laid out and seams have been cut
+            fillLength, // length of additional product required to fill the unfilled section (in pieces)  
+            inch, // quantity of inches of fillLength
+            feet, // quantity of feet of fillLength
+            totalLength, // total length of product required for install
+            sqrYrds; // square yardage of product required for install
+ 
+        measure1 = feet1 + inch1 / 12;
+        measure2 = feet2 + inch2 / 12;
+
+        fullShots = Math.floor(feet1 / 12);
+	fillWidth = (feet1 % 12) + (inch1 / 12);
+	fillWidth += fullShots * 0.25;  // add an extre three inches for every seam - which leaves 1.5 inches to cut off each side
+	
+	if(fillWidth > 6)
+		fillLength = measure2;
+	else if(fillWidth > 4)
+		fillLength = measure2 / 2;
+	else if(fillWidth > 3)
+		fillLength = measure2 / 3;
+	else if(fillWidth > 2)
+		fillLength = measure2 / 4; 
+	else
+		fillLength = measure2 / 5;
+
+        feet = Math.floor(fillLength);
+        inch = (fillLength - feet) * 12;
+	
+	fillLength = convertMeasure(feet, inch);
+
+	if(fillWidth <= 6) 
+		fillLength += 0.25;
+	totalLength = fullShots * convertMeasure(feet2, inch2) + fillLength;
+	sqrYrds = totalLength * 12 / 9; 
+	
+	return sqrYrds;
+      }
+
+      // -------------------------------------------------------------------------------------------------------
+      // Description: calcSqrYrds() - calculates square yardage for rooms that do not require seaming the product
+      // Parameters: feet1 - quanity of feet of first measurement
+      //             inch1 - quanity of inches of first measurement
+      //             feet2 - quanity of feet of first measurement
+      //             inch2 - quanity of inches of first measurement
+      // Returns: sqrYrds - the square yardage of product required to do the install
+      // Calls: convertMeasure(), advancedCalc()
+      //  -------------------------------------------------------------------------------------------------------
+      function calcSqrYrds(feet1, inch1, feet2, inch2) {
+        var measure1, // first measurement as float
+            measure2, // second measurement as float
+            sqrYrds, // square yardage of product required for install
+            sy1, // first square yardage calculated by advancedCalc()
+            sy2; // second square yardage calculated by advancedCalc()  [reverse measurements]
+	
+	measure1 = feet1 + inch1 / 12;
+        measure2 = feet2 + inch2 / 12;
+	
+	if (measure1 <= 12 && measure2 <= 12) 
+
+	//both measurements are less than 12 (product width)
+	  if (measure1 <= measure2)
+	    sqrYrds = convertMeasure(feet1, inch1) * 12 / 9;
+	  else
+	    sqrYrds = convertMeasure(feet2, inch2) * 12 / 9;
+
+	else if (measure1 <= 12 || measure2 <= 12)
+
+	//one of the two measurements is less than 12 (product width) 
+	  if (measure1 >= measure2)
+	    sqrYrds = convertMeasure(feet1, inch1) * 12 / 9;
+	  else
+	    sqrYrds = convertMeasure(feet2, inch2) * 12 / 9;
+
+	else { 
+
+          //neither measurement is less than or equal to 12 (product width)
+	  sy1 = advancedCalc(feet1, inch1, feet2, inch2);
+	  sy2 = advancedCalc(feet2, inch2, feet1, inch1);
+	  sqrYrds = (sy1 < sy2) ? sy1 : sy2; //picks the lesser value
+	}
+
+	sqrYrds = Math.round(sqrYrds * 100) / 100;
+        
+        return sqrYrds;
+      }
+      
+      // -------------------------------------------------------------------------------------------------------
+      // Description: convertMeasure() - rounds the measurement up the nearest fourth of a foot and adds three
+      //                                 inches - required for proper installation 
+      // Parameters: feet - quanity of feet of measurement to convert
+      //             inch - quanity of inches of measurement to convert
+      // Returns: measure - the converted measurement
+      // Calls: none
+      //  -------------------------------------------------------------------------------------------------------
+      function convertMeasure(feet, inch) {
+        var measure; // converted measurement
+        
+        if (inch == 0)
+		measure = feet + 0.25;
+	else if (inch > 0 && inch <= 3)
+		measure = feet + 0.5;
+	else if (inch > 3 && inch <= 6)
+		measure = feet + 0.75;
+	else if (inch > 6 && inch <= 9)
+		measure = ++feet;
+	else
+		measure = ++feet + 0.25;  
+
+        return measure;
+      }
+
+    </script>
+</body>           
+</html>
