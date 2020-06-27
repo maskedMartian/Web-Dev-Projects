@@ -1,0 +1,189 @@
+body {
+	background-image: url('pics/stars.jpg');
+}
+
+#viewarea {
+    width: 1000px;
+    margin: 0 auto;
+    background-color: #f7f7f7; 
+    height: 100%;
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    text-decoration: underline;
+    color: blue;
+}
+
+p {
+	font-family: Tahoma;
+	font-size: 1em;
+}
+
+h1{
+	font-family: Tahoma;
+	color: black;
+}
+
+h2 {
+	font-family: Verdana;
+	font-weight: bold;
+	text-align: center;
+	color: #f7f7f7;
+}
+
+h3{
+	font-family: Verdana;
+	font-weight: bold;
+	color: #008b00;
+}
+
+h4{
+	font-family: Tahoma;
+	color: black;
+}
+	
+td {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#left{
+	width: 40%;
+	//height: 300px; /* 275px; */
+	float: left;
+	//padding-bottom: 50px;
+}
+
+#right{
+	width: 60%;
+	//height: 300px; /* 275px; */
+	float: right;
+	//padding-bottom: 50px;
+}
+#whole{
+	width: 90%;
+	//height: 300px; /* 275px; */
+	padding-left: 50px;
+	//padding-top: 50px;
+	 overflow: auto;
+}
+
+#img1 {
+	margin-top: 60px;
+	height: 200px;
+	width: 200px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	box-shadow: 0 0 20px 20px #caff70;
+
+}
+
+#img2 {
+	margin-top: 60px;
+	height: 200px;
+	width: 200px;
+	border-top-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	box-shadow: 0 0 20px 20px #caff70;
+
+}
+#img3 {
+	height: 100px;
+	width: 100px;
+	border-top-right-radius: 15px;
+	border-bottom-left-radius: 15px;
+	box-shadow: 0 0 10px 10px #caff70;
+}
+
+#img4 {
+	height: 100px;
+	width: 100px;
+	border-top-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	box-shadow: 0 0 10px 10px #caff70;
+}
+
+#menu {
+	position: relative;
+	top: -5px;
+	left: 56%;
+}
+
+#menubuttons{
+	list-style-type: none;
+	position: relative;
+	margin: -10px;
+}
+
+#button{
+	display: inline;
+	border: 2px solid #000000;
+	font-family: Futura, Tahoma, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	color: #f7f7f7;
+	padding: 5px 5px 5px 5px;
+	border-radius: 0px 0px 5px 5px;
+	background-color: #ff4500
+}
+
+#petmenu {
+	position: relative;
+	top: -15px;
+}
+
+#petbuttons{
+	list-style-type: none;
+	position: relative;
+	width: 300px;
+}
+
+#pbutton{
+	border: 2px solid #000000;
+	font-family: Futura, Tahoma, sans-serif;
+	font-weight: bold;
+	text-align: center;
+	color: #f7f7f7;
+	padding: 5px 20px 5px 20px;
+	margin: 5px;
+	border-radius: 5px 5px;
+	background-color: #008b00
+}
+
+#header {
+	position: relative;
+	top:-20px;
+	height: 35px;
+	background-color: #008b00;
+	border-bottom: 2px solid #000000;
+}
+
+#footer{
+	clear: both;
+	position: relative;
+	top: 30px;
+	height: 200px;
+	background-color: #008b00;
+	border-top: 2px solid #000000;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top:5px;
+	padding-bottom: 5px;
+}
+
+#center {
+	text-align: center;
+}
+
+.redText {
+	color: #ff4500;
+}
+

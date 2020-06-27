@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+		<link rel="icon" type="image/ico" href="pics/favicon.ico">
+		<title>Pet Emporium</title>
+	</head>
+	<body>
+		<div id="viewarea">
+			<div id="header">
+				<h2>The Interstellar Pet Emporium</h2>
+			</div>
+			<div id="menu">
+				<ul id="menubuttons">
+					<li id="button"><a href="index.html">Home</a></li>
+					<li id="button"><a href="products.html">Products</a></li>
+					<li id="button"><a href="order.html">Order</a></li>
+					<li id="button"><a href="about.html">About us</a></li>
+					<li id="button"><a href="contact.html">Contact us</a></li>
+				</ul>
+			</div>
+			<div id="whole">
+				<form name="billForm" method="get" action="" onSubmit="return validate(billForm);">
+					<h3>Shipping Information</h3>
+					<p>
+						First Name</br>
+						<input id="firstName" name="fName" type="text"></input></br>
+						Last Name</br>
+						<input id="lastName" name="lName" type="text"></input></br></br>
+						Address Line 1</br>
+						<input id="shipAddr1" name="sAddr1" type="text"></input></br>
+						Address Line 2</br>
+						<input id="shipAddr2" name="sAddr2" type="text"></input></br>
+						City</br>
+						<input id="shipCity" name="sCity" type="text"></input></br>
+						State/Province/Region</br>
+						<input id="shipState" name="sState" type="text"></input></br>
+						Zip Code</br>
+						<input id="shipZip" name="sZip" type="text"></input></br>
+						Country</br>
+						<input id="shipCountry" name="sCountry" type="text"></input></br>
+					</p>
+					<h4>Choose a delivery option</h4>
+					<input name="deliverType" type="radio" value="overnight"></input>Super Express shipping $30,000.00 (2-3 days)<span class="redText" id="superDate"></span></br>
+					<input name="deliverType" type="radio" value="express"></input>Express shipping $3999.99 (2-3 weeks)<span class="redText" id="expressDate"></span></br>
+					<input name="deliverType" type="radio" value="standard" checked="on"></input>Standard shipping $999.99 (2-3 months)<span class="redText" id="standardDate"></span></br>
+					<input name="deliverType" type="radio" value="free"></input>Free shipping (It might be a few years)<span class="redText" id="freeDate"></span></br>
+					<h3>Billing Information</h3>
+					<p>
+						Address same as shipping<input id="sameAddress" name="sameAddr" type="checkbox"></br></br>
+						Address Line 1</br>
+						<input id="billAddr1" name="bAddr1" type="text"></input></br>
+						Address Line 2</br>
+						<input id="billAddr2" name="bAddr2" type="text"></input></br>
+						City</br>
+						<input id="billCity" name="bCity" type="text"></input></br>
+						State/Province/Region</br>
+						<input id="billState" name="bState" type="text"></input></br>
+						Zip Code</br>
+						<input id="billZip" name="bZip" type="text"></input></br>
+						Country</br>
+						<input id="billCountry" name="bCountry" type="text"></input></br></br>
+						Card type:
+						Visa<input name="cardType" type="radio" value="Visa" checked></input>
+						MasterCard<input name="cardType" type="radio" value="MasterCard"></input>
+						American Express<input name="cardType" type="radio" value="American Express"></input>
+						Discover<input name="cardType" type="radio" value="Discover"></input></br></br>	
+						Name on Card</br>
+						<input name="cardName" type="text"></input></br>
+						Card Number</br>
+						<input name="cardNum" type="text" maxlength="16"></input>
+						CCV
+						<input name="ccvNum" type="text" size="4" maxlength="4"></br></br>
+						Expiration Date
+					</p>	
+					<select name="cardMonth">
+						<option value="1">01</option>
+						<option value="2">02</option>
+						<option value="3">03</option>
+						<option value="4">04</option>
+						<option value="5">05</option>
+						<option value="6">06</option>
+						<option value="7">07</option>
+						<option value="8">08</option>
+						<option value="9">09</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+					</select>
+					<select name="cardYear">
+						<option value="2014">2014</option>
+						<option value="2015">2015</option>
+						<option value="2016">2016</option>
+						<option value="2017">2017</option>
+						<option value="2018">2018</option>
+						<option value="2019">2019</option>
+						<option value="2020">2020</option>
+						<option value="2021">2021</option>
+						<option value="2022">2022</option>
+						<option value="2023">2023</option>
+						<option value="2024">2024</option>
+					</select></br></br>
+					<input type="submit" value="Submit Now">
+				</form>
+				<script type="text/javascript" src="scripts/shipdates.js"></script>
+				<script type="text/javascript" src="scripts/sameaddr.js"></script>
+			</div>
+			<div id="footer">
+				<p>"The Interstellar Pet Emporium is your first and only stop for all 
+				of your exotic pet needs. We have been offering a large variety of beloved extraterrestrial 
+				companions for over 256 solar cycles. We guarantee all our pets to be completely 
+				hypoallergenic, free of alien viruses, and shipped, via cyberspace ship, anywhere in the 
+				solar system within 64 lunar cycles after your order has been placed." </br> -Kreetoc of Gilderaan, CEO</p>  
+				<p id="center">A Spacewares Unlimited subsidiary</p>
+			</div>
+		</div>
+		<script type="text/javascript" src="scripts/checkbilling.js"></script>
+	</body>
+</html>
