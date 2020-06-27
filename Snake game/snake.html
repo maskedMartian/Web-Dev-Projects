@@ -1,0 +1,148 @@
+<!--
+-------------------------------------------------------------------------------- 
+  File: snake.html
+  Developer: The maskedMartian
+  Development began: June 5, 2017 - 11:07 pm
+              first beta: 
+  Web address: www.travisbontrager.com/playground/snakegame/snake.html
+  Description:
+--------------------------------------------------------------------------------
+-->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title></title>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Browser game implemented in JavaScript to 
+                                    resemble the snake game that came standard 
+                                    on most early cell phones">
+  <meta name="keywords" content="">
+  <meta name="author" content="Travis Bontrager">
+
+  <!-- <meta name="viewport" content="initial-scale=2.0"> -->
+
+  <meta name="viewport" content="width=620, initial-scale=1.0, user-scalable=no">
+  <!-- <meta name="viewport" content="width=600, height=device-height, initial-scale=2.0, minimum-scale=2.0, user-scalable=no"> -->
+
+  <!-- <link rel="icon" type="image/ico" href="images/.ico">
+       <link rel="stylesheet" type="text/css" href="styles/.css"> -->
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    #mainWrapper {
+      margin: 0;
+      padding: 0;
+    }
+    #gameBoard {
+      margin: 0 auto 10px;
+      padding: 0;
+      width: 600px;
+      height: 600px;
+      background: black;
+      border: solid green 10px;
+      position: relative;
+    }
+    .mover {
+      width: 10px;
+      height: 10px;
+      background: green; 
+      position: absolute;
+      top: 300px;
+      left: -10px;
+    }
+    #gameControls {
+      margin: 0 auto;
+      padding: 0;
+      width: 600px;
+    }
+    #gameControls table {
+      margin: auto;
+    }
+    #gameControls table button {
+      width: 40px;
+      height: 40px;
+    }
+    .controlDiv {
+      width: 200px;
+      float: left;
+    }
+    .controlDiv h1 {
+      margin-top: 0;
+    }
+    @media screen and (max-width: 1000px) {
+      #gameControls table button {
+        width: 70px;
+        height: 70px;
+      } 
+      #gameBoard {
+        margin: 0 auto 20px;
+    } 
+  </style>
+  
+</head>
+
+<body onload="game()">
+  
+  <div id="mainWrapper">
+    <div id="gameBoard">
+      <div class="mover" id="m0"></div>
+      <div class="mover" id="m1"></div>
+      <div class="mover" id="m2"></div>
+      <div class="mover" id="m3"></div>
+      <div class="mover" id="m4"></div>
+      <div class="mover" id="m5"></div>
+      <div class="mover" id="m6"></div>
+      <div class="mover" id="m7"></div>
+      <div class="mover" id="m8"></div>
+      <div class="mover" id="m9"></div>
+      <div class="mover" id="m10"></div>
+      <div class="mover" id="m11"></div>
+      <div class="mover" id="m12"></div>
+      <div class="mover" id="m13"></div>
+      <div class="mover" id="m14"></div>
+      <div class="mover" id="m15"></div> 
+
+    </div> <!-- /end #gameBoard -->  
+    <div id="gameControls">
+      <div class="controlDiv">
+       <h1><u>Score</u></h1>
+       <h1 id="score">00000</h1>
+      </div>
+      <div class="controlDiv">
+        <table>
+          <tr>
+            <td></td> 
+            <td><button id="u" type="button">&#8593;</button></td> <!-- UP -->
+            <td></td>
+          </tr><tr>
+            <td><button id="l" type="button">&#8592;</button></td> <!-- LEFT -->
+            <td></td>
+            <td><button id="r" type="button">&#8594;</button></td> <!-- Right -->
+          </tr><tr>
+            <td></td>
+            <td><button id="d" type="button">&#8595;</button></td> <!-- DOWN -->
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div class="controlDiv" style="text-align:right">
+        <h1><u></u></h1>
+        <h1 id="speed"></h1>
+      </div>
+    </div> <!-- /end #gameControls -->
+  </div> <!-- /end #mainWrapper -->
+
+  <script src="snake.js"></script>
+  
+</body>
+
+</html>
+
+<!-- --------------------------80 character gauge--------------------------- -->
